@@ -1,19 +1,29 @@
-import React from "react";
+import React, {useState} from "react";
+import {RatingValue} from "./Rating";
 
-type RatingValue =  0 | 1 | 2 | 3 | 4 | 5
+const starStyle = {
+    cursor: 'pointer',
+}
 
-export function Rating(props: {value?: RatingValue}) {
+export function UncontrolledRating() {
+    const [value, setValue] = useState<RatingValue>(3)
+
     return (
         <div>
-            <Star selected={props.value! > 0}/>
-            <Star selected={props.value! > 1}/>
-            <Star selected={props.value! > 2}/>
-            <Star selected={props.value! > 3}/>
-            <Star selected={props.value! > 4}/>
+            <Star onClick={() => setValue(1)} selected={value > 0} />
+            <Star onClick={() => setValue(2)} selected={value > 1}/>
+            <Star onClick={() => setValue(3)} selected={value > 2}/>
+            <Star onClick={() => setValue(4)} selected={value > 3}/>
+            <Star onClick={() => setValue(5)} selected={value > 4}/>
         </div>
     )
 }
 
-function Star(props: {selected: boolean}) {
-    return <span>{props.selected ? <b>star </b> : 'star '}</span>
+type Star = {
+    selected: boolean
+    onClick: () => void
+}
+
+function Star(props: Star) {
+    return <span style={starStyle} onClick={props.onClick}>{props.selected ? <b>star </b> : 'star '}</span>
 }

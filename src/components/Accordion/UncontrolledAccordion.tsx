@@ -4,6 +4,10 @@ type Accordion = {
     title: string
 }
 
+const titleStyle = {
+    cursor: 'pointer',
+}
+
 export function UncontrolledAccordion(props: Accordion) {
     const [collapsed, setCollapsed] = useState(false)
 
@@ -23,7 +27,7 @@ type AccordionTitle = {
 }
 
 function AccordionTitle(props: AccordionTitle) {
-    return <h3 onClick={props.onClick}>{props.title}</h3>
+    return <h3 style={titleStyle} onClick={props.onClick}>{props.title}</h3>
 }
 function AccordionBody() {
     return <ul>

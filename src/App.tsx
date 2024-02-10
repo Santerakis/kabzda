@@ -5,14 +5,15 @@ import {Rating as R} from "./components/Rating/Rating";
 import {PageTitle} from "./components/PageTitle/PageTitle";
 import {OnOff} from "./components/OnOff/OnOff";
 import {UncontrolledAccordion} from "./components/Accordion/UncontrolledAccordion";
+import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
 
 function App() {
     return (
-        <div>
+        <div className='App'>
             <PageTitle title='This is App component'/>
 
             Article 1
-            <R />
+            <UncontrolledRating />
 
             Article 2
             <R value={3}/>

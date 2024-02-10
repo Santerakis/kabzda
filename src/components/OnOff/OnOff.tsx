@@ -39,8 +39,8 @@ export const OnOff = (props: OnOff) => {
 
     return (
         <div>
-            <div style={onStyle} onClick={()=>setOn(!on)}>On</div>
-            <div style={offStyle} onClick={()=>setOn(!on)}>Off</div>
+            <div style={onStyle} onClick={()=>setOn(true)}>On</div>
+            <div style={offStyle} onClick={()=>setOn(false)}>Off</div>
             <div style={ledStyle}></div>
         </div>
     );
