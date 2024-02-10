@@ -1,12 +1,12 @@
 import React, {useState} from "react";
 import {RatingValue} from "./Rating";
 
-const starStyle = {
+export const starStyle = {
     cursor: 'pointer',
 }
 
 export function UncontrolledRating() {
-    const [value, setValue] = useState<RatingValue>(3)
+    const [value, setValue] = useState<RatingValue>(0)
 
     return (
         <div>

@@ -11,12 +11,8 @@ const titleStyle = {
 export function UncontrolledAccordion(props: Accordion) {
     const [collapsed, setCollapsed] = useState(false)
 
-    const onTitleClickHandler = () => {
-        setCollapsed(!collapsed)
-    }
-
     return <div>
-        <AccordionTitle title={'USER'} onClick={onTitleClickHandler}/>
+        <AccordionTitle title={'USER'} onClick={() => setCollapsed(!collapsed)}/>
         {!collapsed && <AccordionBody/>}
     </div>
 }

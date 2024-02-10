@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
-import {Rating as R} from "./components/Rating/Rating";
+import {Rating as R, RatingValue} from "./components/Rating/Rating";
 import {PageTitle} from "./components/PageTitle/PageTitle";
 import {OnOff} from "./components/OnOff/OnOff";
 import {UncontrolledAccordion} from "./components/Accordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
 
 function App() {
+    const [ratingValue, setRatingValue] = useState<RatingValue>(0)
+
     return (
         <div className='App'>
             <PageTitle title='This is App component'/>
@@ -16,7 +18,7 @@ function App() {
             <UncontrolledRating />
 
             Article 2
-            <R value={3}/>
+            <R value={ratingValue} onClick={setRatingValue}/>
 
             <Accordion title={'MENU'} collapsed={false}/>
             <UncontrolledAccordion title={'USERS'}/>
