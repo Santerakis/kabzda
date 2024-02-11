@@ -1,15 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const onOffStyle = {
     margin: '2px',
 }
 
-type OnOff = {
-    on: boolean
-    onClick: (_: boolean) => void
-}
-
-export const OnOff = (props: OnOff) => {
+export const UncontrolledOnOff = () => {
+    const [on, setOn] = useState(false)
 
     let onStyle = {
         display: 'inline-block',
@@ -18,7 +14,7 @@ export const OnOff = (props: OnOff) => {
         border: '1px solid',
         padding: '2px',
         cursor: 'pointer',
-        background: props.on ? 'green' : 'none',
+        background: on ? 'green' : 'none',
     }
     let offStyle = {
         display: 'inline-block',
@@ -28,7 +24,7 @@ export const OnOff = (props: OnOff) => {
         marginLeft: '2px',
         padding: '2px',
         cursor: 'pointer',
-        background: props.on ? 'none' : 'red',
+        background: on ? 'none' : 'red',
     }
     let ledStyle = {
         width: '10px',
@@ -37,14 +33,14 @@ export const OnOff = (props: OnOff) => {
         border: '1px solid',
         display: 'inline-block',
         marginLeft: '5px',
-        background: props.on ? 'green' : 'red',
+        background: on ? 'green' : 'red',
 
     }
 
     return (
         <div style={onOffStyle}>
-            <div style={onStyle} onClick={()=>props.onClick(true)}>On</div>
-            <div style={offStyle} onClick={()=>props.onClick(false)}>Off</div>
+            <div style={onStyle} onClick={()=>setOn(true)}>On</div>
+            <div style={offStyle} onClick={()=>setOn(false)}>Off</div>
             <div style={ledStyle}></div>
         </div>
     );

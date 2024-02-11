@@ -6,17 +6,19 @@ import {PageTitle} from "./components/PageTitle/PageTitle";
 import {OnOff} from "./components/OnOff/OnOff";
 import {UncontrolledAccordion} from "./components/Accordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
+import {UncontrolledOnOff} from "./components/OnOff/UncontrolledOnOff";
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValue>(0)
-const [collapsed, setCollapsed] = useState(false)
+    const [collapsed, setCollapsed] = useState(false)
+    const [on, setOn] = useState(false)
 
     return (
         <div className='App'>
             <PageTitle title='This is App component'/>
 
             Article 1
-            <UncontrolledRating />
+            <UncontrolledRating/>
 
             Article 2
             <R value={ratingValue} onClick={setRatingValue}/>
@@ -24,10 +26,8 @@ const [collapsed, setCollapsed] = useState(false)
             <Accordion title={'MENU'} collapsed={collapsed} onClick={setCollapsed}/>
             <UncontrolledAccordion title={'USERS'}/>
 
-            <OnOff on={true}/>
-            <OnOff on={true}/>
-            <OnOff on={true}/>
-            <OnOff on={true}/>
+            <UncontrolledOnOff/>
+            <OnOff on={on} onClick={setOn}/>
         </div>
     );
 }
