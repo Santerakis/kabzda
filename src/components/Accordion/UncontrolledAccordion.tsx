@@ -4,7 +4,7 @@ type Accordion = {
     title: string
 }
 
-const titleStyle = {
+export const titleStyle = {
     cursor: 'pointer',
 }
 

@@ -1,5 +1,9 @@
 import React, {useState} from 'react';
 
+const onOffStyle = {
+    margin: '2px',
+}
+
 type OnOff = {
     on: boolean
 }
@@ -38,7 +42,7 @@ export const OnOff = (props: OnOff) => {
     }
 
     return (
-        <div>
+        <div style={onOffStyle}>
             <div style={onStyle} onClick={()=>setOn(true)}>On</div>
             <div style={offStyle} onClick={()=>setOn(false)}>Off</div>
             <div style={ledStyle}></div>

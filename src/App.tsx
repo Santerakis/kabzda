@@ -9,6 +9,7 @@ import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValue>(0)
+const [collapsed, setCollapsed] = useState(false)
 
     return (
         <div className='App'>
@@ -20,7 +21,7 @@ function App() {
             Article 2
             <R value={ratingValue} onClick={setRatingValue}/>
 
-            <Accordion title={'MENU'} collapsed={false}/>
+            <Accordion title={'MENU'} collapsed={collapsed} onClick={setCollapsed}/>
             <UncontrolledAccordion title={'USERS'}/>
 
             <OnOff on={true}/>
