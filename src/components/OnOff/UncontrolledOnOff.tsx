@@ -4,7 +4,11 @@ const onOffStyle = {
     margin: '2px',
 }
 
-export const UncontrolledOnOff = () => {
+type UncontrolledOnOff = {
+    onChange: (_: boolean) => void
+}
+
+export const UncontrolledOnOff = (props: UncontrolledOnOff) => {
     const [on, setOn] = useState(false)
 
     let onStyle = {
@@ -39,8 +43,8 @@ export const UncontrolledOnOff = () => {
 
     return (
         <div style={onOffStyle}>
-            <div style={onStyle} onClick={()=>setOn(true)}>On</div>
-            <div style={offStyle} onClick={()=>setOn(false)}>Off</div>
+            <div style={onStyle} onClick={()=>{props.onChange(true); setOn(true)}}>On</div>
+            <div style={offStyle} onClick={()=>{props.onChange(false); setOn(false)}}>Off</div>
             <div style={ledStyle}></div>
         </div>
     );

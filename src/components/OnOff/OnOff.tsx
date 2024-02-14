@@ -6,7 +6,7 @@ const onOffStyle = {
 
 type OnOff = {
     on: boolean
-    onClick: (_: boolean) => void
+    onChange: (_: boolean) => void
 }
 
 export const OnOff = (props: OnOff) => {
@@ -43,8 +43,8 @@ export const OnOff = (props: OnOff) => {
 
     return (
         <div style={onOffStyle}>
-            <div style={onStyle} onClick={()=>props.onClick(true)}>On</div>
-            <div style={offStyle} onClick={()=>props.onClick(false)}>Off</div>
+            <div style={onStyle} onClick={()=>props.onChange(true)}>On</div>
+            <div style={offStyle} onClick={()=>props.onChange(false)}>Off</div>
             <div style={ledStyle}></div>
         </div>
     );

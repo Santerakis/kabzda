@@ -16,6 +16,7 @@ function App() {
     return (
         <div className='App'>
             <PageTitle title='This is App component'/>
+            <div>{on.toString()}</div>
 
             Article 1
             <UncontrolledRating/>
@@ -26,8 +27,8 @@ function App() {
             <Accordion title={'MENU'} collapsed={collapsed} onClick={setCollapsed}/>
             <UncontrolledAccordion title={'USERS'}/>
 
-            <UncontrolledOnOff/>
-            <OnOff on={on} onClick={setOn}/>
+            <UncontrolledOnOff onChange={setOn}/>
+            <OnOff on={on} onChange={setOn}/>
         </div>
     );
 }
