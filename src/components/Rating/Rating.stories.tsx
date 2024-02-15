@@ -5,7 +5,7 @@ import {Rating, RatingValue} from "./Rating";
 import {useState} from "react";
 
 const meta: Meta<typeof Rating> = {
-    // title: 'My Accordion',
+    title: 'Rating',
     component: Rating,
 };
 export default meta;

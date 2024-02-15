@@ -6,10 +6,11 @@ const onOffStyle = {
 
 type UncontrolledOnOff = {
     onChange: (_: boolean) => void
+    defaultOn?: boolean
 }
 
 export const UncontrolledOnOff = (props: UncontrolledOnOff) => {
-    const [on, setOn] = useState(false)
+    const [on, setOn] = useState(props.defaultOn ? props.defaultOn : false)
 
     let onStyle = {
         display: 'inline-block',

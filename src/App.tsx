@@ -19,7 +19,7 @@ function App() {
             <div>{on.toString()}</div>
 
             Article 1
-            <UncontrolledRating/>
+            <UncontrolledRating onChange={setRatingValue} />
 
             Article 2
             <R value={ratingValue} onClick={setRatingValue}/>
@@ -28,6 +28,7 @@ function App() {
             <UncontrolledAccordion title={'USERS'}/>
 
             <UncontrolledOnOff onChange={setOn}/>
+            <UncontrolledOnOff defaultOn={true} onChange={setOn}/>
             <OnOff on={on} onChange={setOn}/>
         </div>
     );

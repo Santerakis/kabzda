@@ -5,7 +5,7 @@ import {Accordion} from './Accordion';
 import {useState} from "react";
 
 const meta: Meta<typeof Accordion> = {
-    // title: 'My Accordion',
+    title: 'Accordion',
     component: Accordion,
 };
 
@@ -25,8 +25,7 @@ export const Collapsed = () => {
     return <Accordion collapsed={true} onClick={onChangeCallback} title={'USER'}/>
 }
 export const Opened = () => {
-    return <Accordion collapsed={false} onClick={() => {
-    }} title={'USER'}/>
+    return <Accordion collapsed={false} onClick={onChangeCallback} title={'USER'}/>
 }
 export const Based = () => {
     const [collapsed, setCollapsed] = useState(false)
