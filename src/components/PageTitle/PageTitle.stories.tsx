@@ -3,7 +3,7 @@ import type {Meta} from '@storybook/react';
 import {PageTitle} from "./PageTitle";
 
 const meta: Meta<typeof PageTitle> = {
-    // title: 'My Accordion',
+    title: 'PageTitle',
     component: PageTitle,
 };
 export default meta;

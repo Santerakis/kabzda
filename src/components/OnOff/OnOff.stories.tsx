@@ -5,7 +5,7 @@ import {useState} from "react";
 import {OnOff} from "./OnOff";
 
 const meta: Meta<typeof OnOff> = {
-    // title: 'My Accordion',
+    title: 'OnOff',
     component: OnOff,
 };
 export default meta;
