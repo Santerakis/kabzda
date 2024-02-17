@@ -1,16 +1,23 @@
 import React from "react";
 import {titleStyle} from "./UncontrolledAccordion";
 
+export type Item = {
+    title: string
+    id: string
+}
+
 type Accordion = {
     title: string
     collapsed: boolean
     onClick: (_: boolean) => void
+    items: Item[]
+    onItemClick: (_: string) => void
 }
 
 export function Accordion(props: Accordion) {
     return <div>
         <AccordionTitle {...props}/>
-        {!props.collapsed && <AccordionBody/>}
+        {!props.collapsed && <AccordionBody items={props.items} onItemClick={props.onItemClick}/>}
     </div>
 }
 
@@ -24,10 +31,13 @@ function AccordionTitle(props: AccordionTitle) {
     return <h3 style={titleStyle} onClick={() => props.onClick(!props.collapsed)}>{props.title}</h3>
 }
 
-function AccordionBody() {
+type AccordionBody = {
+    items: Item[]
+    onItemClick: (_: string) => void
+}
+
+function AccordionBody(props: AccordionBody) {
     return <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
+        {props.items.map(i => <li style={{cursor: 'pointer'}} onClick={() => props.onItemClick(i.title)} key={i.id}>{i.title}</li>)}
     </ul>
 }
