@@ -39,7 +39,15 @@ export const ControlledCheckbox = () => {
     return <><input type={'checkbox'} checked={checked} onChange={onChange}/> {checked.toString()}</>
 }
 export const ControlledSelect = () => {
-
+    const [value, setValue] = useState<string | undefined>(undefined)
+    console.log(typeof (value))
+    const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => setValue(e.currentTarget.value)
+    return <><select value={value} onChange={onChangeHandler}>
+        <option >note select</option>
+        <option value={1}>Moscow</option>
+        <option value={2}>London</option>
+        <option value={3}>Beijing</option>
+    </select> {value} </>
 }
 
 
