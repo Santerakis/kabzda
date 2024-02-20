@@ -1,0 +1,32 @@
+.select {
+    border: 1px solid;
+    border-radius: 2px;
+    width: 100px;
+    position: relative;
+}
+
+.items {
+    border: 1px solid black;
+    position: absolute;
+    top: 23px;
+    left: -1px;
+    width: 100px;
+    display: none;
+    border-radius: 2px;
+}
+
+.open {
+    display: block;
+}
+
+.title {
+    margin: 0;
+}
+.titltewrap {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-right: 5px;
+    padding-left: 5px;
+    justify-content: space-between;
+}
