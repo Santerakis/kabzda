@@ -15,6 +15,14 @@
     border-radius: 2px;
 }
 
+.item {
+    padding-left: 5px;
+}
+.hover {
+    background: #1ea7fd;
+    color: white;
+}
+
 .open {
     display: block;
 }
@@ -30,3 +38,7 @@
     padding-left: 5px;
     justify-content: space-between;
 }
+
+/*.select.active .items {*/
+/*    display: block*/
+/*}*/
