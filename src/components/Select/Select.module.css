@@ -3,7 +3,13 @@
     border-radius: 2px;
     width: 100px;
     position: relative;
+    outline-color: #1ea7fd;
 }
+/*.select:focus {*/
+/*    outline-color: red; !* Цвет обводки при фокусировке *!*/
+/*    outline-style: solid; !* Стиль обводки при фокусировке *!*/
+/*    outline-width: 2px; !* Ширина обводки при фокусировке *!*/
+/*}*/
 
 .items {
     border: 1px solid black;
@@ -37,6 +43,15 @@
     padding-right: 5px;
     padding-left: 5px;
     justify-content: space-between;
+}
+
+.arrowSize {
+    width: 10px;
+    height: 10px;
+}
+.arrowBlue {
+    /*stroke: blue;*/
+    fill: #1ea7fd;
 }
 
 /*.select.active .items {*/

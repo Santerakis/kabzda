@@ -11,7 +11,7 @@ const meta: Meta<typeof Select> = {
 export default meta;
 
 export const BaseExample = () => {
-    const [value, setValue] = useState('2')
+    const [value, setValue] = useState('1')
     return <Select onChange={setValue} value={value} items={[
         {value: '1', title: 'Minsk'},
         {value: '2', title: 'Moscow'},
