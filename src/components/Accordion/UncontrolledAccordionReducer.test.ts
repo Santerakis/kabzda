@@ -32,3 +32,5 @@ test('reducer should throw error because action type is incorrect', () => {
 
     expect(() => {reducer(state, {type: 'FAKE_TYPE'})}).toThrow()
 })
+
+//.toThrowError()

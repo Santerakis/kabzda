@@ -41,6 +41,7 @@ export const ControlledCheckbox = () => {
 export const ControlledSelect = () => {
     const [value, setValue] = useState<string | undefined>(undefined)
     console.log(typeof (value))
+    window.addEventListener("keydown", (e) => console.log('pressed key: ', e.key))
     const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => setValue(e.currentTarget.value)
     return <><select value={value} onChange={onChangeHandler}>
         <option >note select</option>
