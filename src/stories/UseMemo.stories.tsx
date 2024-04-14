@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useMemo, useState} from "react";
 
 export default {
     title: 'useMemo',
@@ -8,17 +8,23 @@ export const Example1 = () => {
     const [a, setA] = useState<number>(0)
     const [b, setB] = useState<number>(0)
 
-    let resultA = 1
+    // let resultA = 1
     let resultB = 1
 
-    for (let i = 1; i <= a; i++) {
-        let fake = 0
-        while (fake < 100000000) {
-            fake++
-            const fakeValue = Math.random()
+    const resultA = useMemo(() => {
+        let tempResult = 1
+        for (let i = 1; i <= a; i++) {
+            let fake = 0
+            while (fake < 100000000) {
+                fake++
+                const fakeValue = Math.random()
+            }
+            tempResult = tempResult * i
         }
-        resultA = resultA * i
-    }
+        return tempResult
+    }, [a]);
+
+
 
     for (let i = 1; i <= b; i++) {
         resultB *= i
