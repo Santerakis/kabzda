@@ -14,12 +14,14 @@ type Accordion = {
     onItemClick: (_: string) => void
 }
 
-export function Accordion(props: Accordion) {
-    return <div>
-        <AccordionTitle {...props}/>
-        {!props.collapsed && <AccordionBody items={props.items} onItemClick={props.onItemClick}/>}
-    </div>
-}
+export const Accordion = React.memo(
+    function(props: Accordion) {
+        return <div>
+            <AccordionTitle {...props}/>
+            {!props.collapsed && <AccordionBody items={props.items} onItemClick={props.onItemClick}/>}
+        </div>
+    }
+)
 
 type AccordionTitle = {
     title: string

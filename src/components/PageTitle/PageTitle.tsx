@@ -1,9 +1,11 @@
 import React from 'react';
 
-export const PageTitle = ({title}: {title: string}) => {
-    return (
-        <h2>
-            {title}
-        </h2>
-    );
-};
+export const PageTitle = React.memo(
+    ({title}: {title: string}) => {
+        return (
+            <h2>
+                {title}
+            </h2>
+        );
+    }
+)

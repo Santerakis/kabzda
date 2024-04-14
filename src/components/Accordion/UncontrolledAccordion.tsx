@@ -9,14 +9,16 @@ export const titleStyle = {
     cursor: 'pointer',
 }
 
-export function UncontrolledAccordion(props: Accordion) {
-    const [state, dispatch] = useReducer(reducer, {collapsed: false})
-    console.log('Accordion')
-    return <div>
-        <AccordionTitle title={'USER'} onClick={() => dispatch({type: TOGGLE_COLLAPSED})}/>
-        {!state.collapsed && <AccordionBody/>}
-    </div>
-}
+export const UncontrolledAccordion = React.memo(
+    function(props: Accordion) {
+        const [state, dispatch] = useReducer(reducer, {collapsed: false})
+        console.log('Accordion')
+        return <div>
+            <AccordionTitle title={'USER'} onClick={() => dispatch({type: TOGGLE_COLLAPSED})}/>
+            {!state.collapsed && <AccordionBody/>}
+        </div>
+    }
+)
 
 type AccordionTitle = {
     title: string
