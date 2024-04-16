@@ -1,0 +1,46 @@
+.clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #000;
+    border-radius: 50%;
+}
+
+.hour-hand,
+.minute-hand,
+.second-hand {
+    position: absolute;
+    background-color: #000;
+    transform-origin: center bottom;
+}
+
+.hour-hand {
+    width: 4px;
+    height: 50px;
+}
+
+.minute-hand {
+    width: 2px;
+    height: 80px;
+}
+
+.second-hand {
+    width: 1px;
+    height: 90px;
+    background-color: red; /* Цвет секундной стрелки */
+}
+
+.hour-hand {
+    left: calc(50% - 2px);
+    bottom: 100px;
+}
+
+.minute-hand {
+    left: calc(50% - 1px);
+    bottom: 100px;
+}
+
+.second-hand {
+    left: calc(50% - 0.5px); /* Устанавливаем секундную стрелку в центр */
+    bottom: 100px;
+}
