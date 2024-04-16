@@ -61,16 +61,18 @@ export const SetTimeoutExample = () => {
 
 export const SetIntervalExample = () => {
 
-    console.log('SetTimeoutExample')
+    console.log('SetIntervalExample')
     const [render, setRender] = useState(1)
     const [counter, setCounter] = useState(1)
 
     useEffect(() => {
 
-        setInterval(()=>{
+        const idInterval = setInterval(()=>{
             console.log('tik:' + counter)
             setCounter(prev => prev + 1)
         }, 1000)
+
+        return () => clearInterval(idInterval)
 
     }, [])
 
