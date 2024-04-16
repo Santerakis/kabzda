@@ -33,6 +33,49 @@ export const Example1 = () => {
     return <>
         <button onClick={() => setRender(render + 1)}>render</button>
         <button onClick={() => setCounter(counter + 1)}>counter+</button>
-        {counter}
+        {' '}{counter}
         </>
 }
+
+export const SetTimeoutExample = () => {
+
+    console.log('SetTimeoutExample')
+    const [render, setRender] = useState(1)
+    const [counter, setCounter] = useState(1)
+
+    useEffect(() => {
+
+        setTimeout(()=>{
+            console.log('setTimeout')
+            document.title = counter.toString()
+        }, 1000)
+
+    }, [counter])
+
+    return <>
+        <button onClick={() => setRender(render + 1)}>render</button>
+        <button onClick={() => setCounter(counter + 1)}>counter+</button>
+        {' '}{counter}
+    </>
+}
+
+export const SetIntervalExample = () => {
+
+    console.log('SetTimeoutExample')
+    const [render, setRender] = useState(1)
+    const [counter, setCounter] = useState(1)
+
+    useEffect(() => {
+
+        setInterval(()=>{
+            console.log('setInterval')
+            document.title = counter.toString()
+        }, 1000)
+
+    }, [counter])
+
+    return <>
+        {counter}
+    </>
+}
+
