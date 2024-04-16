@@ -68,11 +68,11 @@ export const SetIntervalExample = () => {
     useEffect(() => {
 
         setInterval(()=>{
-            console.log('setInterval')
-            document.title = counter.toString()
+            console.log('tik:' + counter)
+            setCounter(prev => prev + 1)
         }, 1000)
 
-    }, [counter])
+    }, [])
 
     return <>
         {counter}
