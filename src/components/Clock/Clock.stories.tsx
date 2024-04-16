@@ -1,4 +1,5 @@
 import {EasyClock} from "./EasyClock";
+import {Clock} from "./Clock";
 
 
 export default {
@@ -7,9 +8,4 @@ export default {
 
 export const EasyClockExamlpe = () => <EasyClock />
 
-export const ClockExample = () => {
-
-    return <div>
-        11:22:11
-    </div>
-}
+export const ClockExample = () => <Clock />
