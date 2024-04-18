@@ -119,13 +119,31 @@ export const KeysTrackerExample = () => {
 export const KeysTrackerExample2 = () => {
     const [text, setText] = useState('')
     console.log('KeysTrackerExample rendered with' + text)
-    const OnKeyPress = (e: KeyboardEvent) => {
+    const handleKeyPress = (e: KeyboardEvent) => {
         console.log(e.key)
         setText(text => text + e.key)
     }
     useEffect(() => {
-        window.addEventListener("keypress", OnKeyPress)
-        return () => window.removeEventListener("keypress", OnKeyPress)
+        window.addEventListener("keypress", handleKeyPress) // подписка на нажатие
+        return () => window.removeEventListener("keypress", handleKeyPress) // отписка от нажатия
+    }, []);
+
+    return <>
+        Typed text: {text}
+    </>
+}
+
+export const ExpiredComponent = () => {
+    const [text, setText] = useState('')
+    console.log('ExpiredComponent')
+    useEffect(() => {
+        const timeoutID = setTimeout(() => {
+            console.log('Timeout EXPIRED')
+            setText('3 seconds passed')
+        }, 3000)
+        return () => {
+            // clearTimeout(timeoutID)
+        }
     }, []);
 
     return <>
