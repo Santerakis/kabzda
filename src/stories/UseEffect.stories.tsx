@@ -86,7 +86,7 @@ export const ResetEffectExample = () => {
     console.log('ResetEffectExample rendered with ' + render)
 
     useEffect(() => {
-        console.log('Effect accurred: ' + render)
+        console.log('Effect accurred: ' + render) // как сингронизация стороннего, делается в эффекте
         return () => {
             console.log('Clean Effect ' + render)
         }
@@ -98,4 +98,39 @@ export const ResetEffectExample = () => {
         <button onClick={() => setRender(render + 1)}>render</button>
     </>
 }
+
+export const KeysTrackerExample = () => {
+    const [text, setText] = useState('')
+    console.log('KeysTrackerExample rendered with' + text)
+    const OnKeyPress = (e: KeyboardEvent) => {
+        console.log(e.key)
+        setText(text + e.key)
+    }
+    useEffect(() => {
+        window.addEventListener("keypress", OnKeyPress)
+        return () => window.removeEventListener("keypress", OnKeyPress)
+    }, [text]);
+
+    return <>
+        Typed text: {text}
+    </>
+}
+
+export const KeysTrackerExample2 = () => {
+    const [text, setText] = useState('')
+    console.log('KeysTrackerExample rendered with' + text)
+    const OnKeyPress = (e: KeyboardEvent) => {
+        console.log(e.key)
+        setText(text => text + e.key)
+    }
+    useEffect(() => {
+        window.addEventListener("keypress", OnKeyPress)
+        return () => window.removeEventListener("keypress", OnKeyPress)
+    }, []);
+
+    return <>
+        Typed text: {text}
+    </>
+}
+
 
