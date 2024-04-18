@@ -27,3 +27,4 @@ export const MediumClock = () => {
         </div>
     </div>
 }
+//https://medium.com/@guyrashko/how-to-create-an-analog-clock-using-react-2e2e382367c3

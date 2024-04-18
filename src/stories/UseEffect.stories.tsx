@@ -38,7 +38,6 @@ export const Example1 = () => {
 }
 
 export const SetTimeoutExample = () => {
-
     console.log('SetTimeoutExample')
     const [render, setRender] = useState(1)
     const [counter, setCounter] = useState(1)
@@ -60,7 +59,6 @@ export const SetTimeoutExample = () => {
 }
 
 export const SetIntervalExample = () => {
-
     console.log('SetIntervalExample')
     const [render, setRender] = useState(1)
     const [counter, setCounter] = useState(1)
@@ -78,6 +76,26 @@ export const SetIntervalExample = () => {
 
     return <>
         {counter}
+    </>
+}
+
+
+// очистка когда компанента демонтируется либо перед очередным вызовом эффекта
+export const ResetEffectExample = () => {
+    const [render, setRender] = useState(1)
+    console.log('ResetEffectExample rendered with ' + render)
+
+    useEffect(() => {
+        console.log('Effect accurred: ' + render)
+        return () => {
+            console.log('Clean Effect ' + render)
+        }
+    // }, []);
+    }, [render]);
+
+    return <>
+        render: {render}
+        <button onClick={() => setRender(render + 1)}>render</button>
     </>
 }
 
